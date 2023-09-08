@@ -1,0 +1,19 @@
+
+{% extends 'layout.html' %} {% block body %}
+
+<main>
+    <div class="container-body">
+        <div class="background">
+            <img src="/static/assets/404_error_background.jpg" alt="" id="error-background">
+        </div>
+        <div class="change-button">
+            <img class="chevron-icon" src="/static/assets/chevron-left.png" alt="">
+            <a href="{{ url_for('weather_forecast')}}"> CHANGE CITY </a>
+        </div>
+        <h2 id="error-text"> This city does not exist. Please try again. </h2>
+        <div class="footer">
+            <a href="https://rachanahegde.squarespace.com/"> © Rachana Hegde </a>
+        </div>
+    </div>
+</main>
+{% endblock %}

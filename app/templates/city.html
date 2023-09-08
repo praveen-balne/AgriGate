@@ -1,0 +1,61 @@
+
+{% extends 'layout.html' %} {% block body %}
+
+    <div class="container-body div-with-bg" background-image="/static/assets/weaher-home-background">
+        <div class="change-button">
+            <img class="chevron-icon" src="/static/assets/chevron-left.png" alt="">
+            <a href="{{ url_for('weather_forecast')}}"> CHANGE CITY </a>
+        </div>
+        <div class="city-header">
+            <h1> {{ city_name }} </h1>
+            <h2> {{ current_date }} </h2>
+        </div>
+        <div class="daily-forecast">
+            <p id="current-temp"> {{ current_temp }}ºC </p>
+            <div class="daily-section">
+                <img class="weather-icon" src="/static/assets/{{ current_weather.lower() }}.png" alt="">
+                <p class="forecast-text"> {{ current_weather }} </p>
+            </div>  
+            <div class="daily-section">
+                <img class="weather-icon" src="/static/assets/thermometer.png" alt="">
+                <p class="forecast-text"> {{min_temp }}° - {{ max_temp }}° </p>
+            </div> 
+            <div class="daily-section">
+                <img class="weather-icon" src="/static/assets/wind.png" alt="">
+                <p class="forecast-text"> {{ wind_speed }} meter/sec </p>
+            </div> 
+        </div>
+        <div class="divider"> </div>
+        <h2> 5-DAY FORECAST </h2>
+        <div class="five-day">
+            <div class="forecast-item">
+                <p> {{ five_day_dates_list[0] }} </p>
+                <img class="weather-icon" src="/static/assets/{{ current_weather.lower() }}.png" alt="">
+                <p> {{ current_temp }}º <br> {{current_weather.lower()}}</p>
+            </div>
+            <div class="forecast-item">
+                <p> {{ five_day_dates_list[1] }} </p>
+                <img class="weather-icon" src="/static/assets/{{five_day_weather_list[1].lower()}}.png" alt="">
+                <p> {{ five_day_temp_list[1] }}º <br> {{five_day_weather_list[1].lower()}} </p>
+            </div>
+            <div class="forecast-item">
+                <p> {{ five_day_dates_list[2] }} </p>
+                <img class="weather-icon" src="/static/assets/{{five_day_weather_list[2].lower()}}.png" alt="">
+                <p> {{ five_day_temp_list[2] }}º <br> {{five_day_weather_list[2].lower()}} </p>
+            </div>
+            <div class="forecast-item">
+                <p> {{five_day_dates_list[3]}} </p>
+                <img class="weather-icon" src="/static/assets/{{five_day_weather_list[3].lower()}}.png" alt="">
+                <p> {{ five_day_temp_list[3] }}º <br> {{five_day_weather_list[3].lower()}} </p>
+            </div>
+            <div class="forecast-item">
+                <p> {{five_day_dates_list[4]}} </p>
+                <img class="weather-icon" src="/static/assets/{{five_day_weather_list[4].lower()}}.png" alt="">
+                <p> {{ five_day_temp_list[4] }}º <br> {{five_day_weather_list[4].lower()}} </p>
+            </div>
+        </div>
+        <div> 
+
+        </div>
+    </div>
+{% endblock %}
