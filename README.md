@@ -34,6 +34,7 @@ Note: When you enter the city name, make sure to enter mostly common city names.
 - Download the code from the Github - 
 
 - Install all the required packages with
+  '''
   pip install -r requirements.txt
   ```
 - Goto to app folder and finally run the project with
